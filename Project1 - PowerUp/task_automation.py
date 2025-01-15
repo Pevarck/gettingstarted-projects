@@ -5,13 +5,17 @@ import pandas as pd
 pyautogui.PAUSE = 0.5
 link = "https://dlp.hashtagtreinamentos.com/python/intensivao/login"
 
+products = pd.read_csv("products_database.csv")
+
+print(products)
+
 pyautogui.press("win")
 pyautogui.write("chrome")
 pyautogui.press("enter")
 pyautogui.write(link)
 pyautogui.press("enter")
 
-time.sleep(3)
+time.sleep(2)
 
 pyautogui.click(x=698, y=407)
 pyautogui.write("gabrielp@hotmail.com")
@@ -20,10 +24,7 @@ pyautogui.write("test1234")
 pyautogui.press("tab")
 pyautogui.press("enter")
 
-products = pd.read_csv("produtos.csv")
-print(products)
-
-time.sleep(3)
+time.sleep(2)
 
 for line in products.index:
     pyautogui.click(x=697, y=292)
@@ -49,7 +50,7 @@ for line in products.index:
     pyautogui.press("tab")
 
     #unit_price
-    unit_price = products.loc[line, "preo_unitario"]
+    unit_price = products.loc[line, "preco_unitario"]
     pyautogui.write(str(unit_price))
     pyautogui.press("tab")
     
