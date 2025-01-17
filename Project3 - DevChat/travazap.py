@@ -63,6 +63,4 @@ def main(page):
     page.add(buttom)
        
    
-
-    
 ft.app(main, view=ft.WEB_BROWSER, port=8000)
